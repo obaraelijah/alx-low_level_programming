@@ -6,9 +6,10 @@ nclude " main.h"
  */
 void print_alphabet(void)
 {
-	char i;
+	char letter;
 
-	for (i = 'a'; i <= 'z'; i++)
-		_putchar(i);
+	for (letter = 'a'; letter <= 'z'; letter++)
+		_putchar(letter);
+
 	_putchar('\n');
 }

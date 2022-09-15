@@ -6,7 +6,6 @@
   * Return: 0 success
   */
 void print_triangle(int size)
-void print_triangle(int size)
 {
 	int a, b;
 

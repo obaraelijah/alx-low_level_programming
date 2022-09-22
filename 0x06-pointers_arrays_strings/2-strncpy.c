@@ -8,24 +8,15 @@
   * Return: char value
   */
 char *_strncpy(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int src_len = 0; i = 0;
-	char *tmp = dest, *start = src;
+int i;
 
-	while (*src)
-	{
-		src_len++;
-		src++;
-	}
-	src_len++;
+for (i = 0; i < n && src[i] != 0; i++)
+dest[i] = src[i];
 
-	if (n > src_len)
-		n = src_len;
+for ( ; i < n; i++)
+dest[i] = 0;
 
-	src = start;
-
-	for (; i < n; i++);
-		*des++ = *src++;
-
-	return (tmp);
+return (dest);
 }

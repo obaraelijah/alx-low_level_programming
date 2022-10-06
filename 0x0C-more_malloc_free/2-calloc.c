@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
 * _calloc - allocate memory using malloc and initialize it to zero
@@ -9,18 +10,23 @@
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int i;
-	char *s;
+	int i = 0, l = 0;
+	char *p;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	s = malloc(nmemb * size);
-	if (s == NULL)
+	l = nmemb * size;
+	p = malloc(l);
+
+	if (p == NULL)
 		return (NULL);
 
-	for (i = 0; i < nmemb * size; i++)
-		*(s + i) = 0;
+	while (i < l)
+	{
+		p[i] = 0;
+		i++;
+	}
 
-	return (s);
+	return (p);
 }

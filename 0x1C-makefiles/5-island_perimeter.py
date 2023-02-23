@@ -18,27 +18,18 @@ def island_perimeter(grid):
     - The width and height of the grid don't exceed 100.
     - There is exactly one island in the grid.
     """
-    rows, cols = len(grid), len(grid[0])
+    rows = len(grid)
+    cols = len(grid[0])
     perimeter = 0
-    
-    for i in range(rows):
-        for j in range(cols):
+    for i in range(1, rows - 1):
+        for j in range(1, cols - 1):
             if grid[i][j] == 1:
-                # check top side
-                if i == 0 or grid[i-1][j] == 0:
+                if grid[i - 1][j] == 0:
                     perimeter += 1
-                
-                # check bottom side
-                if i == rows-1 or grid[i+1][j] == 0:
+                if grid[i + 1][j] == 0:
                     perimeter += 1
-                    
-                # check left side
-                if j == 0 or grid[i][j-1] == 0:
+                if grid[i][j - 1] == 0:
                     perimeter += 1
-                
-                # check right side
-                if j == cols-1 or grid[i][j+1] == 0:
+                if grid[i][j + 1] == 0:
                     perimeter += 1
-                    
     return perimeter
-
